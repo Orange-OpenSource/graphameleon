@@ -1,0 +1,49 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Graphameleon: a Web extension that captures Web
+  navigation traces and transforms them into a RDF
+  graph for further exploration.
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0009-0004-4822-4748'
+    affiliation: Orange
+    given-names: Benjamin
+    family-names: Stach
+  - orcid: 'https://orcid.org/0000-0001-5887-899X'
+    affiliation: Orange
+    given-names: Lionel
+    family-names: Tailhardat
+  - orcid: 'https://orcid.org/0000-0001-5639-1504'
+    given-names: Yoan
+    family-names: Chabot
+    affiliation: Orange
+  - orcid: 'https://orcid.org/0000-0003-0457-1436'
+    affiliation: EURECOM
+    given-names: Raphaël
+    family-names: Troncy
+repository-code: 'https://github.com/Orange-OpenSource/graphameleon'
+url: 'https://github.com/Orange-OpenSource/graphameleon'
+abstract: >-
+  Graphameleon: a Web extension that captures Web
+  navigation traces and transforms them into a RDF
+  graph for further exploration. The mapping to RDF
+  uses the RML syntax and is user-defined. The serialization
+  is in Turtle syntax, and can also be raw JSON.
+  Typical applications are, for example: process-mining of
+  navigation traces, Web browser and server behavior analysis,
+  network topology analysis.
+keywords:
+  - web-extension
+  - web-navigation
+  - semantic-web
+  - linked-data
+  - RDF
+license: BSD-4-Clause
+version: v2.1.0
+date-released: '2023-08-20'
