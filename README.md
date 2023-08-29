@@ -13,13 +13,13 @@ Additionally, it utilizes the [React-Force-Graph](https://github.com/vasturiano/
 If you use this software in a scientific publication, please cite:
 
 > Benjamin Stach, Lionel Tailhardat, Yoan Chabot, and Raphaël Troncy. 2023.
-> Web Navigation Capture for Anomaly Detection: a Web Browser-Level Approach Leveraging Knowledge Graphs.
+> Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs.
 
 BibTex format:
 
 ```bibtex
 @inproceedings{graphemeleon-2023,
-  title = {{Web Navigation Capture for Anomaly Detection: a Web Browser-Level Approach Leveraging Knowledge Graphs}},
+  title = {{Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs}},
   author = {{Benjamin Stach} and {Lionel Tailhardat} and {Yoan Chabot} and {Rapha\"el Troncy}},
   year = {2023}
 }
