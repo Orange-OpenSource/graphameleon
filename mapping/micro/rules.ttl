@@ -1,0 +1,235 @@
+# Copyright (c) 2022-2023 Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#     This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix map: <http://mapping.example.com/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix gpl: <http://graphameleon.com#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core#> .
+@prefix ucoact: <https://ontology.unifiedcyberontology.org/uco/action#> .
+@prefix ucobs: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+
+map:jc_000 rr:child "ip" ;
+	rr:parent "ip" .
+
+map:jc_001 rr:child "host" ;
+	rr:parent "host" .
+
+map:map_host_000 rml:logicalSource map:source_003 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "host" ;
+	rr:predicateObjectMap map:pom_011, map:pom_012 ;
+	rr:subjectMap map:s_003 .
+
+map:map_id_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "id" ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003, map:pom_004 ;
+	rr:subjectMap map:s_000 .
+
+map:map_ip_000 rml:logicalSource map:source_002 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "ip" ;
+	rr:predicateObjectMap map:pom_009, map:pom_010 ;
+	rr:subjectMap map:s_002 .
+
+map:map_url_000 rml:logicalSource map:source_001 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "url" ;
+	rr:predicateObjectMap map:pom_005, map:pom_006, map:pom_007, map:pom_008 ;
+	rr:subjectMap map:s_001 .
+
+map:om_000 rdf:type rr:ObjectMap ;
+	rr:constant "https://ontology.unifiedcyberontology.org/uco/observable#httpConnectionFacet" ;
+	rr:termType rr:IRI .
+
+map:om_001 rml:reference "method" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_002 rml:reference "start_time" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:integer ;
+	rr:termType rr:Literal .
+
+map:om_003 rml:reference "end_time" ;
+	rdf:type rr:ObjectMap ;
+	rr:datatype xsd:integer ;
+	rr:termType rr:Literal .
+
+map:om_004 rdf:type rr:ObjectMap ;
+	rr:template "http://graphameleon.com#URL_{url_iri}" ;
+	rr:termType rr:IRI .
+
+map:om_005 rdf:type rr:ObjectMap ;
+	rr:constant "https://ontology.unifiedcyberontology.org/uco/observable#URLFacet" ;
+	rr:termType rr:IRI .
+
+map:om_006 rml:reference "url" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_007 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_000 ;
+	rr:parentTriplesMap map:map_ip_000 .
+
+map:om_008 rdf:type rr:ObjectMap ;
+	rr:joinCondition map:jc_001 ;
+	rr:parentTriplesMap map:map_host_000 .
+
+map:om_009 rdf:type rr:ObjectMap ;
+	rr:constant "https://ontology.unifiedcyberontology.org/uco/observable#IPAddressFacet" ;
+	rr:termType rr:IRI .
+
+map:om_010 rml:reference "ip" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_011 rdf:type rr:ObjectMap ;
+	rr:constant "https://ontology.unifiedcyberontology.org/uco/observable#DomainNameFacet" ;
+	rr:termType rr:IRI .
+
+map:om_012 rml:reference "host" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:pm_000 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_001 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:requestMethod .
+
+map:pm_002 rdf:type rr:PredicateMap ;
+	rr:constant core:startTime .
+
+map:pm_003 rdf:type rr:PredicateMap ;
+	rr:constant core:endTime .
+
+map:pm_004 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:hasFacet .
+
+map:pm_005 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_006 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:fullValue .
+
+map:pm_007 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:host .
+
+map:pm_008 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:host .
+
+map:pm_009 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_010 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:addressValue .
+
+map:pm_011 rdf:type rr:PredicateMap ;
+	rr:constant rdf:type .
+
+map:pm_012 rdf:type rr:PredicateMap ;
+	rr:constant ucobs:addressValue .
+
+map:pom_000 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_000 ;
+	rr:predicateMap map:pm_000 .
+
+map:pom_001 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_001 ;
+	rr:predicateMap map:pm_001 .
+
+map:pom_002 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_002 ;
+	rr:predicateMap map:pm_002 .
+
+map:pom_003 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_003 ;
+	rr:predicateMap map:pm_003 .
+
+map:pom_004 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_004 ;
+	rr:predicateMap map:pm_004 .
+
+map:pom_005 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_005 ;
+	rr:predicateMap map:pm_005 .
+
+map:pom_006 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_006 ;
+	rr:predicateMap map:pm_006 .
+
+map:pom_007 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_007 ;
+	rr:predicateMap map:pm_007 .
+
+map:pom_008 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_008 ;
+	rr:predicateMap map:pm_008 .
+
+map:pom_009 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_009 ;
+	rr:predicateMap map:pm_009 .
+
+map:pom_010 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_010 ;
+	rr:predicateMap map:pm_010 .
+
+map:pom_011 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_011 ;
+	rr:predicateMap map:pm_011 .
+
+map:pom_012 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_012 ;
+	rr:predicateMap map:pm_012 .
+
+map:rules_000 <http://rdfs.org/ns/void#exampleResource> map:map_host_000, map:map_id_000, map:map_ip_000, map:map_url_000 ;
+	rdf:type <http://rdfs.org/ns/void#Dataset> .
+
+map:s_000 rdf:type rr:SubjectMap ;
+	rr:template "http://graphameleon.com#HTTP_CON_{id}" .
+
+map:s_001 rdf:type rr:SubjectMap ;
+	rr:template "http://graphameleon.com#URL_{url_iri}" .
+
+map:s_002 rdf:type rr:SubjectMap ;
+	rr:template "http://graphameleon.com#IP_{ip_iri}" .
+
+map:s_003 rdf:type rr:SubjectMap ;
+	rr:template "http://graphameleon.com#DOMAIN_{host_iri}" .
+
+map:source_000 rml:iterator "$[*]" ;
+	rml:referenceFormulation ql:JSONPath ;
+	rml:source "data.json" ;
+	rdf:type rml:LogicalSource .
+
+map:source_001 rml:iterator "$[*]" ;
+	rml:referenceFormulation ql:JSONPath ;
+	rml:source "data.json" ;
+	rdf:type rml:LogicalSource .
+
+map:source_002 rml:iterator "$[*]" ;
+	rml:referenceFormulation ql:JSONPath ;
+	rml:source "data.json" ;
+	rdf:type rml:LogicalSource .
+
+map:source_003 rml:iterator "$[*]" ;
+	rml:referenceFormulation ql:JSONPath ;
+	rml:source "data.json" ;
+	rdf:type rml:LogicalSource .
