@@ -168,6 +168,6 @@ Copyright (c) 2022-2023, [Orange](https://hellofuture.orange.com/). All rights r
 ## Maintainer
 
 * [Benjamin STACH](mailto:benjaminstach.pro@gmail.com)
-* [Lionel TAILHARDAT](lionel.tailhardat@orange.com)
-* [Yoan CHABOT](yoan.chabot@orange.com)
-* [Raphaël TRONCY](raphael.troncy@eurecom.fr)
+* [Lionel TAILHARDAT](mailto:lionel.tailhardat@orange.com)
+* [Yoan CHABOT](mailto:yoan.chabot@orange.com)
+* [Raphaël TRONCY](mailto:raphael.troncy@eurecom.fr)
