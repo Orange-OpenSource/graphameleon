@@ -29,8 +29,133 @@ Repository structure :
 
 ```tree
 📁 graphameleon
+├───📁 mapping/ <Default semantical mapping rules (RML, YARRRML)>
+│   └───...
+├───📁 public/
+│   ├───📁 assets/ <All assets files>
+│   │   └───...
+│   ├───📄 index.html
+│   ├───📄 manifest.chrome.json <Manifest V3 for Chrome based browsers>
+│   └───📄 manifest.firefox.json <Manifest V2 for Firefox browser>
+├───📁 src/ <Extension source code>
+│   ├───📁 app/ <Application-specific files>
+│   │   ├───📁 components/ <React UI components and panels>
+│   │   │   └───...
+│   │   └───📄 App.jsx <React app>
+│   ├───📁 scripts/ <Extension scripts (background, content) and modules>
+│   │   ├───📁 modules/
+│   │   │   ├───📄 Interaction.js <Interaction collector>
+│   │   │   ├───📄 Manager.js <Managing communications, collections and mapping>
+│   │   │   ├───📄 Mapper.js <Mapping management, graph builder>
+│   │   │   └───📄 Request.js <Request collector>
+│   │   ├───📁 utils/
+│   │   │   ├───📄 mapping.js <Raw string default semantical mapping rules (RML)>
+│   │   │   ├───📄 settings.js <Cross-browser specifiations>
+│   │   │   └───📄 tools.js <Handcrafted usefull functions>
+│   │   ├───📄 background.js <Background script: manager, mapper and request collector>
+│   │   └───📄 content.js <Content script: interaction collectors>
+│   └───📄 index.jsx
 └───...
 ```
+
+## Usage
+
+### Build
+
+Pre-requisites:
+
+* Downloading and installing [Node.js](https://nodejs.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+* Cloning the repository to your computer
+
+Create a build for **Firefox**:
+
+```shell
+# Firefox is considered to be the browser by default for the build process
+npm run start
+```
+
+Create a build for **Chrome**:
+
+```shell
+npm run start:chrome
+```
+
+Create a build for **Edge**:
+
+```shell
+npm run start:edge
+```
+
+Clean the distribution file:
+
+```shell
+npm run clean
+```
+
+---
+
+<h3 style="display:flex; align-items:end; gap:12px">
+    <img src="preview/icons/firefox.svg" alt="Logo" height="24"/>
+    Run on Firefox
+</h3>
+
+1. First, open a firefox navigation window and go to the following page: `about:debugging#/runtime/this-firefox`
+2. In the **Temporary Extensions** section, click on the **Load Temporary Add-on...** button.
+3. Then, select the `manifest.json` from the `./dist` or any other file from the same directory to load the extension.
+
+The **Graphameleon** Extension is now loaded on Firefox !
+
+---
+
+<h3 style="display:flex; align-items:end; gap:12px">
+    <img src="preview/icons/chrome.svg" alt="Logo" height="24"/>
+    Run on Chrome
+</h3>
+
+1. First, open a chrome navigation window and go to the following page: `chrome://extensions/`
+2. Enable the **Developer Mode** on the top-right corner.
+2. Click on the **Load unpacked** button.
+3. Then, select the `manifest.json` from the `./dist` or any other file from the same directory to load the extension.
+
+The **Graphameleon** Extension is now loaded on Chrome !
+
+---
+
+<h3 style="display:flex; align-items:end; gap:12px">
+    <img src="preview/icons/edge.svg" alt="Logo" height="24"/>
+    Run on Edge
+</h3>
+
+1. First, open an edge navigation window and go to the following page: `edge://extensions/](edge://extensions/`
+2. Enable the **Developer Mode** on the left navigation bar.
+3. Click on the **Load unpacked** button.
+4. Then, select the `manifest.json` from the `./dist` or any other file from the same directory to load the extension.
+
+The **Graphameleon** Extension is now loaded on Edge !
+
+---
+
+### Data capture
+
+The general process for performing data capture is as follows:
+
+1. Open the Graphameleon component, this brings a Graphameleon panel
+2. Select a collect mode:
+    - micro
+    - macro
+    - hybrid
+3. Select a general output format:
+    - raw
+    - semantize: the data will be mapped according to a RDF data model (ontology); 
+   you must then select a mapping definition file in [RML](https://rml.io/) syntax (`.ttl` extension) using the *Browse* button.
+   See mapping definition examples in the [mapping/](mapping) folder.
+4. Start data capture with the *Record* button
+5. Navigate the Web in the other Web browser tabs
+6. Stop data capture with the *Stop* button from the Graphameleon panel
+7. Select a file export format:
+    - Raw capture: [JSON](https://tools.ietf.org/html/rfc8259) | [CSV](https://tools.ietf.org/html/rfc4180)
+    - Semantize capture: [N-Triples](https://www.w3.org/TR/n-triples/) | [Turtle](https://www.w3.org/TR/turtle/)
+8. Export the data with the *Export* button, the resulting data will be saved in the Web browser's default download folder.
 
 ## License
 
