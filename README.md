@@ -163,6 +163,8 @@ The general process for performing data capture is as follows:
     - Semantize capture: [N-Triples](https://www.w3.org/TR/n-triples/) | [Turtle](https://www.w3.org/TR/turtle/)
 8. Export the data with the *Export* button, the resulting data will be saved in the Web browser's default download folder.
 
+Please check the [*graphameleon-ds*](https://github.com/Orange-OpenSource/graphameleon-ds) repository for examples of data captured using the Graphameleon Web extension.
+
 ## License
 
 [BSD-4-Clause](LICENSE.txt)
