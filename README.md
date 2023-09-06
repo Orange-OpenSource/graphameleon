@@ -1,8 +1,13 @@
-# Graphameleon Web extension
+<h1>
+    Graphameleon Web extension 
+    <sub><img src="preview/icons/edge.svg" alt="Logo" height="24" align="right"/></sub>
+    <sub><img src="preview/icons/chrome.svg" alt="Logo" height="24" align="right"/></sub>
+    <sub><img src="preview/icons/firefox.svg" alt="Logo" height="24" align="right"/></sub>
+</h1>
 
 **Graphameleon** is a Web Browser Extension which collects and semantizes Web navigation traces.
 
-**UNDER CONSTRUCTION, thanks for your patience!**
+![Graphameleon Web Extension Preview](preview/gpl_preview.png)
 
 Following research on the [NORIA-O](https://github.com/Orange-OpenSource/noria-ontology) and [DynaGraph](https://github.com/Orange-OpenSource/dynagraph) projects, the Graphameleon Web extension brings visualization and recording of Web navigation traces at the browser level.
 Then, leveraging knowledge graph representations, to perform User and Entity Behavior Analytics (UEBA) and Anomaly Detection (AD).
