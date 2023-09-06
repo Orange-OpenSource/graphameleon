@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/preview" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/public" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

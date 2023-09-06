@@ -71,6 +71,7 @@ Pre-requisites:
 
 * Downloading and installing [Node.js](https://nodejs.org/) and [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 * Cloning the repository to your computer
+* Installing third-party npm modules: `npm install`
 
 Create a build for **Firefox**:
 
