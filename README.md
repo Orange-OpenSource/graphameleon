@@ -113,7 +113,7 @@ The **Graphameleon** Extension is now loaded on Edge !
 The general process for performing data capture is as follows:
 
 1. Open the Graphameleon component, this brings a Graphameleon panel
-2. Select a collect mode:
+2. Select a capture mode (see table below for details):
     - micro
     - macro
     - hybrid
@@ -129,6 +129,27 @@ The general process for performing data capture is as follows:
     - Raw capture: [JSON](https://tools.ietf.org/html/rfc8259) | [CSV](https://tools.ietf.org/html/rfc4180)
     - Semantize capture: [N-Triples](https://www.w3.org/TR/n-triples/) | [Turtle](https://www.w3.org/TR/turtle/)
 8. Export the data with the *Export* button, the resulting data will be saved in the Web browser's default download folder.
+
+#### Data collected with Graphameleon
+
+The following table shows the type of data collected by the Graphameleon Web extension as a function of the **capture mode** (micro-activity *vs* macro-activity), and grouped by their **scope** (request *vs* interaction *vs* both):
+
+| Scope         | Feature/header name | Micro | Macro |
+|---------------|---------------------|-------|-------|
+| *Request*     | Method              | Yes   | Yes   |
+|               | URL                 | Yes   | Yes   |
+|               | IP                  | Yes   | Yes   |
+|               | Domain              | Yes   | Yes   |
+|               | Sec-Fetch-Dest      | Yes   | Yes   |
+|               | Sec-Fetch-Site      | Yes   | Yes   |
+|               | Sec-Fetch-User      | Yes   | Yes   |
+|               | Sec-Fetch-Mode      | Yes   | Yes   |
+| *Interaction* | EventType           | -     | Yes   |
+|               | Element             | -     | Yes   |
+|               | Base URL            | -     | Yes   |
+| *Both*        | User-Agent          | Yes   | Yes   |
+|               | Start time          | Yes   | Yes   |
+|               | End time            | Yes   | Yes   |
 
 #### Data model for user activities
 
