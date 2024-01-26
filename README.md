@@ -30,39 +30,6 @@ BibTex format:
 }
 ```
 
-Repository structure :
-
-```tree
-📁 graphameleon
-├───📁 mapping/ <Default semantical mapping rules (RML, YARRRML)>
-│   └───...
-├───📁 public/
-│   ├───📁 assets/ <All assets files>
-│   │   └───...
-│   ├───📄 index.html
-│   ├───📄 manifest.chrome.json <Manifest V3 for Chrome based browsers>
-│   └───📄 manifest.firefox.json <Manifest V2 for Firefox browser>
-├───📁 src/ <Extension source code>
-│   ├───📁 app/ <Application-specific files>
-│   │   ├───📁 components/ <React UI components and panels>
-│   │   │   └───...
-│   │   └───📄 App.jsx <React app>
-│   ├───📁 scripts/ <Extension scripts (background, content) and modules>
-│   │   ├───📁 modules/
-│   │   │   ├───📄 Interaction.js <Interaction collector>
-│   │   │   ├───📄 Manager.js <Managing communications, collections and mapping>
-│   │   │   ├───📄 Mapper.js <Mapping management, graph builder>
-│   │   │   └───📄 Request.js <Request collector>
-│   │   ├───📁 utils/
-│   │   │   ├───📄 mapping.js <Raw string default semantical mapping rules (RML)>
-│   │   │   ├───📄 settings.js <Cross-browser specifiations>
-│   │   │   └───📄 tools.js <Handcrafted usefull functions>
-│   │   ├───📄 background.js <Background script: manager, mapper and request collector>
-│   │   └───📄 content.js <Content script: interaction collectors>
-│   └───📄 index.jsx
-└───...
-```
-
 ## Usage
 
 ### Build
@@ -163,7 +130,58 @@ The general process for performing data capture is as follows:
     - Semantize capture: [N-Triples](https://www.w3.org/TR/n-triples/) | [Turtle](https://www.w3.org/TR/turtle/)
 8. Export the data with the *Export* button, the resulting data will be saved in the Web browser's default download folder.
 
+#### Data model for user activities
+
+The following class diagram defines the concepts and properties used for the semantic representation of **micro-activities** (left) and **macro-activities** (right):
+
+![Class diagram](docs/diagrams/gpl_classes.png)
+
+For **micro-activities**, the presented classes and properties accurately describe a sequence of requests captured at the Web browser level.
+**Macro-activities** further enhance the modeling by allowing the description of interactions.
+
+The names of concepts and properties used here are defined within the UCO vocabulary, the following namespaces apply:
+* `core` : https://ontology.unifiedcyberontology.org/uco/core#
+* `ucobs` : https://ontology.unifiedcyberontology.org/uco/observable#
+* `types` : https://ontology.unifiedcyberontology.org/uco/types#
+
+#### Example dataset
+
 Please check the [*graphameleon-ds*](https://github.com/Orange-OpenSource/graphameleon-ds) repository for examples of data captured using the Graphameleon Web extension.
+
+---
+
+### Repository structure
+
+```tree
+📁 graphameleon
+├───📁 mapping/ <Default semantical mapping rules (RML, YARRRML)>
+│   └───...
+├───📁 public/
+│   ├───📁 assets/ <All assets files>
+│   │   └───...
+│   ├───📄 index.html
+│   ├───📄 manifest.chrome.json <Manifest V3 for Chrome based browsers>
+│   └───📄 manifest.firefox.json <Manifest V2 for Firefox browser>
+├───📁 src/ <Extension source code>
+│   ├───📁 app/ <Application-specific files>
+│   │   ├───📁 components/ <React UI components and panels>
+│   │   │   └───...
+│   │   └───📄 App.jsx <React app>
+│   ├───📁 scripts/ <Extension scripts (background, content) and modules>
+│   │   ├───📁 modules/
+│   │   │   ├───📄 Interaction.js <Interaction collector>
+│   │   │   ├───📄 Manager.js <Managing communications, collections and mapping>
+│   │   │   ├───📄 Mapper.js <Mapping management, graph builder>
+│   │   │   └───📄 Request.js <Request collector>
+│   │   ├───📁 utils/
+│   │   │   ├───📄 mapping.js <Raw string default semantical mapping rules (RML)>
+│   │   │   ├───📄 settings.js <Cross-browser specifiations>
+│   │   │   └───📄 tools.js <Handcrafted usefull functions>
+│   │   ├───📄 background.js <Background script: manager, mapper and request collector>
+│   │   └───📄 content.js <Content script: interaction collectors>
+│   └───📄 index.jsx
+└───...
+```
 
 ## License
 
