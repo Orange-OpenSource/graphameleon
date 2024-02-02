@@ -157,13 +157,21 @@ The following class diagram defines the concepts and properties used for the sem
 
 ![Class diagram](docs/diagrams/gpl_classes.png)
 
-For **micro-activities**, the presented classes and properties accurately describe a sequence of requests captured at the Web browser level.
-**Macro-activities** further enhance the modeling by allowing the description of interactions.
-
 The names of concepts and properties used here are defined within the UCO vocabulary, the following namespaces apply:
+
 * `core` : https://ontology.unifiedcyberontology.org/uco/core#
 * `ucobs` : https://ontology.unifiedcyberontology.org/uco/observable#
 * `types` : https://ontology.unifiedcyberontology.org/uco/types#
+
+For **micro-activities**, the presented classes and properties accurately describe a sequence of requests captured at the Web browser level.
+
+* An HTTP request is represented by an entity of the class `ucobs:HTTPConnectionFacet`, and its headers are represented by specific properties such as `ucobs:startTime` and `ucobs:endTime` for timestamps, and `core:tag` for [fetch metadata request headers](https://www.w3.org/TR/2021/WD-fetch-metadata-20210720/).
+* Since an IP address or URL can be common to multiple requests (e.g., a user repeating the same call to a website, a website with various services hosted on the same server), these elements shall be materialized through the `ucobs:IPAddressFacet` and `ucobs:URLFacet` classes respectively, and cross-references between entities is built through properties such as `ucobs:hasFacet` and `ucobs:host`.
+
+**Macro-activities** further enhance the modeling by allowing the description of interactions.
+
+* We consider the user interactions (e.g., click on a hyperlink, on a Web browser button) as `ucoact:ObservableAction` class instances, with relations to the above `ucobs:HTTPConnectionFacet` and `ucobs:URLFacet` entities for describing the context in which they occur.
+* Further, we consider the `types:threadNextItem` and `types:threadPreviousItem` properties from UCO for modeling the chronology of activity traces.
 
 #### Example dataset
 
