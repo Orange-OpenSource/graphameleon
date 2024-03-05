@@ -17,16 +17,18 @@ Additionally, it utilizes the [React-Force-Graph](https://github.com/vasturiano/
 
 If you use this software in a scientific publication, please cite:
 
-> Benjamin Stach, Lionel Tailhardat, Yoan Chabot, and Raphaël Troncy. 2023.
+> Benjamin Stach, Lionel Tailhardat, Yoan Chabot, and Raphaël Troncy. 2024.
 > Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs.
+> In The Web Conference 2024, WWW '24, Singapore, May 13--17, 2024, Proceedings.
 
 BibTex format:
 
 ```bibtex
-@inproceedings{graphemeleon-2023,
+@inproceedings{graphemeleon-2024,
   title = {{Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs}},
   author = {{Benjamin Stach} and {Lionel Tailhardat} and {Yoan Chabot} and {Rapha\"el Troncy}},
-  year = {2023}
+  booktitle = {{The Web Conference 2024, WWW '24, Singapore, May 13--17, 2024, Proceedings}},
+  year = {2024}
 }
 ```
 
