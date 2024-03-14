@@ -47,3 +47,25 @@ keywords:
 license: BSD-4-Clause
 version: v2.1.0
 date-released: '2023-08-20'
+preferred-citation:
+  type: conference-paper
+  authors:
+  - orcid: 'https://orcid.org/0000-0001-5887-899X'
+    affiliation: Orange
+    given-names: Lionel
+    family-names: Tailhardat
+  - orcid: 'https://orcid.org/0009-0004-4822-4748'
+    affiliation: Orange
+    given-names: Benjamin
+    family-names: Stach
+  - orcid: 'https://orcid.org/0000-0001-5639-1504'
+    given-names: Yoan
+    family-names: Chabot
+    affiliation: Orange
+  - orcid: 'https://orcid.org/0000-0003-0457-1436'
+    affiliation: EURECOM
+    given-names: Raphaël
+    family-names: Troncy
+  journal: "The Web Conference 2024, WWW '24, Singapore, May 13--17, 2024, Proceedings"
+  title: "Graphameleon: Relational Learning and Anomaly Detection on Web Navigation Traces Captured as Knowledge Graphs"
+  year: 2024
