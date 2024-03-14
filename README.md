@@ -36,6 +36,13 @@ BibTex format:
 
 ## Usage
 
+To start using Graphameleon, you have two options:
+
+* Download a [release](https://github.com/Orange-OpenSource/graphameleon/releases) and unzip it.
+* Build the component.
+
+Once you have completed this step, proceed to the **Run** step described below.
+
 ### Build
 
 Pre-requisites:
