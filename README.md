@@ -15,6 +15,8 @@ Then, leveraging knowledge graph representations, to perform User and Entity Beh
 The extension incorporates an internal semantical mapping module that relies on the [RMLmapper](https://rml.io/) library to construct a RDF knowledge graph during navigation.
 Additionally, it utilizes the [React-Force-Graph](https://github.com/vasturiano/react-force-graph) visualization library, allowing users to view their navigation traces in a 3D representation of the knowledge graph.
 
+You may want to look at the [ACM SIGWEB/Graphameleon](https://www.youtube.com/watch?v=upaMA_YzBZs) video for an overview of the Graphameleon proposal.
+
 If you use this software in a scientific publication, please cite:
 
 > Lionel Tailhardat, Benjamin Stach, Yoan Chabot, and Raphaël Troncy. 2024.
