@@ -1,0 +1,126 @@
+# Copyright (c) 2022-2024 Orange. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+#     1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+#     2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+#     3. All advertising materials mentioning features or use of this software must display the following acknowledgement:
+#     This product includes software developed by Orange.
+#     4. Neither the name of Orange nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY Orange "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL Orange BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#>.
+@prefix gpl: <http://graphameleon.com#>.
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core#>.
+@prefix ucoact: <https://ontology.unifiedcyberontology.org/uco/action#>.
+@prefix ucobs: <https://ontology.unifiedcyberontology.org/uco/observable#>.
+@prefix types: <https://ontology.unifiedcyberontology.org/uco/types#>.
+
+gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5 a ucobs:DomainNameFacet;
+    ucobs:addressValue "hellofuture.orange.com".
+gpl:HTTPCON_65131716C1BBFD1F763E37544AA86045 a ucobs:HTTPConnectionFacet;
+    core:tag "?1", "document", "navigate", "none";
+    ucobs:endTime "2024-05-14T06:02:04.670Z";
+    ucobs:hasFacet gpl:URL_4221AF1735942424D1CFF8059956B4F1;
+    ucobs:startTime "2024-05-14T06:02:04.060Z".
+gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6 a ucobs:IPAddressFacet;
+    ucobs:addressValue "90.84.175.15".
+gpl:TRACE_65131716C1BBFD1F763E37544AA86045 a ucoact:ObservableAction;
+    core:objectCreatedTime "2024-05-14T06:02:04.060Z";
+    core:tag "request";
+    core:value "req-https://hellofuture.orange.com/en/";
+    ucobs:object gpl:HTTPCON_65131716C1BBFD1F763E37544AA86045.
+gpl:URL_4221AF1735942424D1CFF8059956B4F1 a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/";
+    ucobs:host gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5, gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6.
+gpl:TRACE_5014E2B71DECAD8C563E1DD2F344F504 a ucoact:ObservableAction;
+    core:createdBy "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0";
+    core:objectCreatedTime "2024-05-14T06:02:09.657Z";
+    core:tag "click";
+    core:value "clc-body>main>header>div[2]>div>div[2]>ul>li[3]>ul>li[2]>a4221AF1735942424D1CFF8059956B4F1";
+    ucobs:location gpl:URL_4221AF1735942424D1CFF8059956B4F1;
+    types:threadPreviousItem gpl:TRACE_65131716C1BBFD1F763E37544AA86045.
+gpl:TRACE_65131716C1BBFD1F763E37544AA86045 types:threadNextItem gpl:TRACE_5014E2B71DECAD8C563E1DD2F344F504.
+gpl:URL_4221AF1735942424D1CFF8059956B4F1 a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/".
+gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5 a ucobs:DomainNameFacet;
+    ucobs:addressValue "hellofuture.orange.com".
+gpl:HTTPCON_549A4DCACE3E945AC418FB267EE2CC55 a ucobs:HTTPConnectionFacet;
+    core:tag "?1", "document", "navigate", "same-origin";
+    ucobs:endTime "2024-05-14T06:02:10.116Z";
+    ucobs:hasFacet gpl:URL_329B90CFF5990FEF3A82990A5D7EA30A;
+    ucobs:startTime "2024-05-14T06:02:09.709Z".
+gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6 a ucobs:IPAddressFacet;
+    ucobs:addressValue "90.84.175.15".
+gpl:TRACE_5014E2B71DECAD8C563E1DD2F344F504 types:threadNextItem gpl:TRACE_549A4DCACE3E945AC418FB267EE2CC55.
+gpl:TRACE_549A4DCACE3E945AC418FB267EE2CC55 a ucoact:ObservableAction;
+    core:objectCreatedTime "2024-05-14T06:02:09.709Z";
+    core:tag "request";
+    core:value "req-https://hellofuture.orange.com/en/blog/";
+    ucobs:object gpl:HTTPCON_549A4DCACE3E945AC418FB267EE2CC55;
+    types:threadPreviousItem gpl:TRACE_5014E2B71DECAD8C563E1DD2F344F504.
+gpl:URL_329B90CFF5990FEF3A82990A5D7EA30A a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/blog/";
+    ucobs:host gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5, gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6.
+gpl:TRACE_549A4DCACE3E945AC418FB267EE2CC55 types:threadNextItem gpl:TRACE_D6B19513766325B2882406A51C20843D.
+gpl:TRACE_D6B19513766325B2882406A51C20843D a ucoact:ObservableAction;
+    core:createdBy "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0";
+    core:objectCreatedTime "2024-05-14T06:02:12.422Z";
+    core:tag "click";
+    core:value "clc-body>main>section[2]>div[1]>section>div>div[1]>a329B90CFF5990FEF3A82990A5D7EA30A";
+    ucobs:location gpl:URL_329B90CFF5990FEF3A82990A5D7EA30A;
+    types:threadPreviousItem gpl:TRACE_549A4DCACE3E945AC418FB267EE2CC55.
+gpl:URL_329B90CFF5990FEF3A82990A5D7EA30A a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/blog/".
+gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5 a ucobs:DomainNameFacet;
+    ucobs:addressValue "hellofuture.orange.com".
+gpl:HTTPCON_2340953D67DBA43E001C2856CF7A4518 a ucobs:HTTPConnectionFacet;
+    core:tag "?1", "document", "navigate", "same-origin";
+    ucobs:endTime "2024-05-14T06:02:12.757Z";
+    ucobs:hasFacet gpl:URL_71E5D84CFCC428F59133C2E7E7367707;
+    ucobs:startTime "2024-05-14T06:02:12.456Z".
+gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6 a ucobs:IPAddressFacet;
+    ucobs:addressValue "90.84.175.15".
+gpl:TRACE_2340953D67DBA43E001C2856CF7A4518 a ucoact:ObservableAction;
+    core:objectCreatedTime "2024-05-14T06:02:12.456Z";
+    core:tag "request";
+    core:value "req-https://hellofuture.orange.com/en/noria-network-anomaly-detection-using-knowledge-graphs/";
+    ucobs:object gpl:HTTPCON_2340953D67DBA43E001C2856CF7A4518;
+    types:threadPreviousItem gpl:TRACE_D6B19513766325B2882406A51C20843D.
+gpl:TRACE_D6B19513766325B2882406A51C20843D types:threadNextItem gpl:TRACE_2340953D67DBA43E001C2856CF7A4518.
+gpl:URL_71E5D84CFCC428F59133C2E7E7367707 a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/noria-network-anomaly-detection-using-knowledge-graphs/";
+    ucobs:host gpl:DOMAIN_FFA3663C1472819F8C7D8ABD71BCE1A5, gpl:IP_8FB0208EB9E71D6FB112972C354B4DE6.
+gpl:TRACE_2340953D67DBA43E001C2856CF7A4518 types:threadNextItem gpl:TRACE_94AD2E55FCA161A483DE44C08800AD1F.
+gpl:TRACE_94AD2E55FCA161A483DE44C08800AD1F a ucoact:ObservableAction;
+    core:createdBy "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0";
+    core:objectCreatedTime "2024-05-14T06:02:18.823Z";
+    core:tag "click";
+    core:value "clc-body>main>div[3]>div[1]>div>div>div>div[3]>div[1]>div[1]>p[23]>a71E5D84CFCC428F59133C2E7E7367707";
+    ucobs:location gpl:URL_71E5D84CFCC428F59133C2E7E7367707;
+    types:threadPreviousItem gpl:TRACE_2340953D67DBA43E001C2856CF7A4518.
+gpl:URL_71E5D84CFCC428F59133C2E7E7367707 a ucobs:URLFacet;
+    ucobs:fullValue "https://hellofuture.orange.com/en/noria-network-anomaly-detection-using-knowledge-graphs/".
+gpl:DOMAIN_2F0096F341F49DAA238064955414F109 a ucobs:DomainNameFacet;
+    ucobs:addressValue "www.eurecom.fr".
+gpl:HTTPCON_132821111FF12AD46EF9AFC159AB4DC0 a ucobs:HTTPConnectionFacet;
+    core:tag "?1", "cross-site", "document", "navigate";
+    ucobs:endTime "2024-05-14T06:02:19.439Z";
+    ucobs:hasFacet gpl:URL_6FA308B18D7AD1FC10068A860C7E0E85;
+    ucobs:startTime "2024-05-14T06:02:18.868Z".
+gpl:IP_45B82001176DEECDA0BD90C18B08F84C a ucobs:IPAddressFacet;
+    ucobs:addressValue "193.55.113.222".
+gpl:TRACE_132821111FF12AD46EF9AFC159AB4DC0 a ucoact:ObservableAction;
+    core:objectCreatedTime "2024-05-14T06:02:18.868Z";
+    core:tag "request";
+    core:value "req-https://www.eurecom.fr/";
+    ucobs:object gpl:HTTPCON_132821111FF12AD46EF9AFC159AB4DC0;
+    types:threadPreviousItem gpl:TRACE_94AD2E55FCA161A483DE44C08800AD1F.
+gpl:TRACE_94AD2E55FCA161A483DE44C08800AD1F types:threadNextItem gpl:TRACE_132821111FF12AD46EF9AFC159AB4DC0.
+gpl:URL_6FA308B18D7AD1FC10068A860C7E0E85 a ucobs:URLFacet;
+    ucobs:fullValue "https://www.eurecom.fr/";
+    ucobs:host gpl:DOMAIN_2F0096F341F49DAA238064955414F109, gpl:IP_45B82001176DEECDA0BD90C18B08F84C.
