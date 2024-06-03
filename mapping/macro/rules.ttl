@@ -23,6 +23,38 @@
 @prefix ucobs: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix types: <https://ontology.unifiedcyberontology.org/uco/types#> .
 
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix v: <http://rdf.data-vocabulary.org/#> .
+@prefix void: <http://rdfs.org/ns/void#exampleResource> .
+
+# === RMLdoc ==================================================================
+
+map:person_000 dct:contributor foaf:Person ;
+			   rdfs:label "Benjamin STACH" ;
+.
+
+map:person_001 dct:contributor foaf:Person ;
+			   rdfs:label "Lionel TAILHARDAT" ;
+.
+
+map:rules_000
+	rdf:type schema:Dataset;
+	schema:contributor map:person_000 ;
+	schema:contributor map:person_001 ;
+	void:exampleResource <https://github.com/Orange-OpenSource/graphameleon-ds> ;
+	schema:version "0.1.0";
+	schema:title "Graphameleon - macro";
+	schema:dateCreated "01-10-2023";
+	schema:description "RML mapping for data collection using Graphameleon in macro mode.";
+	schema:license <https://github.com/Orange-OpenSource/graphameleon/blob/main/LICENSE.txt> ;
+.
+
+# === Mapping =================================================================
+
 map:jc_000 rr:child "ip" ;
 	rr:parent "ip" .
 
