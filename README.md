@@ -37,6 +37,14 @@ BibTex format:
 }
 ```
 
+:fr: Si vous utilisez ce logiciel dans une publication scientifique, merci de citer :
+
+> Lionel TAILHARDAT, Benjamin STACH, Yoan CHABOT, Raphaël TRONCY. 2024.
+> Graphaméléon : apprentissage des relations et détection d’anomalies sur les traces de navigation Web capturées sous forme de graphes de connaissances.
+> In Plate-Forme Intelligence Artificielle (PFIA), IC track, July 01-05, 2024, La Rochelle, France.
+
+Pour une courte démo du fonctionnement de Graphaméléon, vous pouvez consulter la vidéo [PFIA2024-Graphameleon-demo.webm](https://github.com/Orange-OpenSource/graphameleon/raw/main/docs/demo/PFIA2024-Graphameleon-demo.webm) (dans le dossier [docs/demo/](docs/demo/)).
+
 ## Usage
 
 To start using Graphameleon, you have two options:
